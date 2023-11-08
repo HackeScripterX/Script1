@@ -1,0 +1,186 @@
+-- This is a WIP so it doesn't have much.. game is garb.
+
+repeat wait() until game:IsLoaded(); -- ensure game is loaded.
+
+-- Wally's Lib
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/UILibs/WallyUI.lua", true))()
+
+-- Anti-AFK
+for i,v in pairs(getconnections(game.Players.LocalPlayer.Idled)) do
+    v:Disable()
+end
+
+-- Plr
+local Plr = game:GetService("Players").LocalPlayer
+local Plr_GUI = Plr.PlayerGui
+local Char = Plr.Character
+
+-- Rand Locals
+local VirtualUser = game:GetService("VirtualUser")
+local VirtualInputManager = game:GetService("VirtualInputManager")
+local Players = game:GetService("Players")
+local Selected_NPC = "XZ_LF";
+local NPCS_Arr = {};
+local maxplayerdistance = 500;
+local maxboxdistance = 500;
+local maxdummydistance = 500;
+
+-- Setup NPC Teleports
+-- This is a WIP so it doesn't have much.. game is garb.
+
+repeat wait() until game:IsLoaded(); -- ensure game is loaded.
+
+-- Wally's Lib
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/UILibs/WallyUI.lua", true))()
+
+-- Anti-AFK
+for i,v in pairs(getconnections(game.Players.LocalPlayer.Idled)) do
+    v:Disable()
+end
+
+-- Plr
+local Plr = game:GetService("Players").LocalPlayer
+local Plr_GUI = Plr.PlayerGui
+local Char = Plr.Character
+
+-- Rand Locals
+local VirtualUser = game:GetService("VirtualUser")
+local VirtualInputManager = game:GetService("VirtualInputManager")
+local Players = game:GetService("Players")
+local Selected_NPC = "XZ_LF";
+local NPCS_Arr = {};
+local maxplayerdistance = 500;
+local maxboxdistance = 500;
+local maxdummydistance = 500;
+
+-- Setup NPC Teleports
+function Setup_NPCTeleport()
+    local NPCS = game:GetService("Workspace"):WaitForChild("Map").NPCs
+
+    -- Add all NPCS to array
+    for i, NPC in pairs(NPCS:GetChildren()) do
+        table.insert(NPCS_Arr, NPC.Name);
+    end
+end
+
+-- Anti Cheat
+local anticheat
+anticheat = hookmetamethod(game, "__index", newcclosure(function(...)
+    local self, k = ...
+    
+    if not checkcaller() and k == "WalkSpeed" and self.Name == "Humanoid" and self:IsA("Humanoid") then
+        return 16;
+    elseif not checkcaller() and k == "JumpPower" and self.Name == "Humanoid" and self:IsA("Humanoid") then
+        return 50;
+    elseif not checkcaller() and k == "Gravity" and self.Name == "Workspace" then
+        return 196.2;
+    end
+    
+    return anticheat(...)
+end))
+
+-- Part of Anti Cheat Bypass
+local antikick
+antikick = hookmetamethod(game, "__namecall", function(...)
+    local self, k = ...
+
+    if not checkcaller() and self == Plr and k == "Kick" then
+        return;
+    end
+    
+    return antikick(...)
+end)
+
+-- Main Window
+local a = library:CreateWindow("Yt: ExplotingX")
+
+
+-- Plr Mods Window
+local b = library:CreateWindow("Blade Ball")
+
+-- No Jump Cooldown
+local Jump_Cooldown = b:Button('Auto Parry', function()
+    getgenv().config = getgenv().config or {
+    hit_time = 0.5, -- // recommended 0.5 to 0.15 \\ --
+    
+    mode = 'Always', -- // Hold , Toggle , Always \\ --
+    deflect_type = 'Remote', -- // Key Press , Remote \\ --
+    notifications = true,
+    keybind = Enum.KeyCode.V
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
+end)
+
+-- No Jump Cooldown
+local Jump_Cooldown = b:Button('Auto Parry Pc/Mob', function()
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/main/RedCircleBlock"))()
+end)
+
+-- No Jump Cooldown
+local Jump_Cooldown = b:Button('Spam Click', function()
+     getgenv().Mode = “AI” — “AimOnly”,”Rage”, “AI”
+getgenv().ForceWin = false –100% Win Need Telekenis
+getgenv().AutoUseSkill = true
+getgenv().BaseVelocity = 0 –Base On The Server, IDK Where To Get it It Should Be 4-6 Or 0 (Old Server)
+getgenv().BasePredictVelocity = 3.4 — Should be From 3-3.5 Work Good With 3 If Old Server
+getgenv().VisualizePath = true — false //
+getgenv().AutoSpamClickDetect = true — Spam Click If Near Other Player
+getgenv().CloseRangeAttack = true — Just Move Forward To The Last Character
+getgenv().AutoGetVelocity = false — Need The Ball To Be Stopped
+getgenv().AutoClickKeyBind = “X” — Need The Ball To Be Stopped
+loadstring(game:HttpGet(“https://api.luarmor.net/files/v3/loaders/fd07660d92cb26891e9acfab9f0c6ba4.lua”))()
+end)
+
+￼Enterfunction Setup_NPCTeleport()
+    local NPCS = game:GetService("Workspace"):WaitForChild("Map").NPCs
+
+    -- Add all NPCS to array
+    for i, NPC in pairs(NPCS:GetChildren()) do
+        table.insert(NPCS_Arr, NPC.Name);
+    end
+end
+
+-- Anti Cheat
+local anticheat
+anticheat = hookmetamethod(game, "__index", newcclosure(function(...)
+    local self, k = ...
+    
+    if not checkcaller() and k == "WalkSpeed" and self.Name == "Humanoid" and self:IsA("Humanoid") then
+        return 16;
+    elseif not checkcaller() and k == "JumpPower" and self.Name == "Humanoid" and self:IsA("Humanoid") then
+        return 50;
+    elseif not checkcaller() and k == "Gravity" and self.Name == "Workspace" then
+        return 196.2;
+    end
+    
+    return anticheat(...)
+end))
+
+-- Part of Anti Cheat Bypass
+antikick
+antikick = hookmetamethod(game, "__namecall", function(...)
+    local self, k = ...
+
+    if not checkcaller() and self == Plr and k == "Kick" then
+        return;
+    end
+    
+    return antikick(...)
+end)
+
+-- Main Window
+local a = library:CreateWindow("Yt: ExplotingX")
+
+
+-- Plr Mods Window
+local b = library:CreateWindow("Blade Ball")
+
+-- No Jump Cooldown
+local Jump_Cooldown = b:Button('Auto Parry', function()
+    getgenv().config = getgenv().config or {
+    hit_time = 0.5, -- // recommended 0.5 to 0.15 \\ --
+    
+    mode = 'Always', -- // Hold , Toggle , Always \\ --
+    deflect_type = 'Remote', -- // Key Press , Remote \\ --
+    notifications = true,
